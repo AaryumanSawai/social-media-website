@@ -12,16 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const express = require('express');
-const app = express();
-const port = 8000;
-app.set('view engine', 'ejs');
-app.set('views','./views');
-app.use('/',require('./routes'));
-app.listen(port,function(err){
-    if(err)
-    {
-        console.log(`error in running server: ${err}`);
-    }
-    console.log(`server is running on port ${port}`);
-})
+module.exports.profile = function(req,res){
+   return res.end('<h1>user profile</h1>');
+}
+module.exports.posts = function(req,res){
+    return res.end('<h1>user posts</h1>');
+ }
+ 
